@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 230" role="img" aria-labelledby="title desc">
+  <title id="title">Radiance Aesthetics &amp; Wellness</title>
+  <desc id="desc">Horizontal Radiance Aesthetics and Wellness logo lockup.</desc>
+  <defs>
+    <linearGradient id="radianceGold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d4a05f"/>
+      <stop offset="1" stop-color="#9f6b3d"/>
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(20 22)">
+    <g fill="none" stroke="url(#radianceGold)" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M56 138c18-52 42-87 84-103 43-16 91 2 109 41" stroke-width="4"/>
+      <path d="M143 54c25 16 30 31 33 50 2 20 14 33 33 41" stroke-width="3"/>
+      <path d="M174 78c9 8 20 8 29 0" stroke-width="2"/>
+      <path d="M209 111c-9 9-21 15-35 20" stroke-width="3"/>
+      <path d="M220 138c15-28 37-33 60-12-11 27-33 35-60 12Z" stroke-width="3"/>
+      <path d="M242 151c7-30 29-44 58-42 0 30-21 45-58 42Z" stroke-width="3"/>
+      <path d="M194 148c22-19 43-18 63 4-22 20-43 19-63-4Z" stroke-width="3"/>
+    </g>
+    <text x="0" y="130" fill="url(#radianceGold)" font-family="Georgia, 'Times New Roman', serif" font-size="112">R</text>
+    <text x="80" y="162" fill="url(#radianceGold)" font-family="Georgia, 'Times New Roman', serif" font-size="86">x</text>
+  </g>
+
+  <line x1="330" y1="42" x2="330" y2="188" stroke="#bd8550" stroke-width="2"/>
+
+  <text
+    x="382"
+    y="102"
+    fill="#1f2929"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="52"
+    letter-spacing="20"
+  >RADIANCE</text>
+
+  <line x1="386" y1="150" x2="455" y2="150" stroke="#bd8550" stroke-width="2"/>
+  <text
+    x="474"
+    y="158"
+    fill="#bd8550"
+    font-family="'Trebuchet MS', Arial, sans-serif"
+    font-size="19"
+    letter-spacing="8"
+  >AESTHETICS &amp; WELLNESS</text>
+  <line x1="774" y1="150" x2="850" y2="150" stroke="#bd8550" stroke-width="2"/>
+</svg>
