@@ -584,7 +584,7 @@ h3 {
 
 .goal-row {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: clamp(0.7rem, 1.4vw, 1.1rem);
   width: min(92rem, calc(100% - 2rem));
   margin: 0 auto;
@@ -1655,7 +1655,7 @@ cite {
   }
 
   .goal-row {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .treatment-scroll {
