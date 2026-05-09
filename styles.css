@@ -1001,7 +1001,8 @@ h3 {
   position: relative;
   height: 100%;
   margin: 0;
-  overflow: visible;
+  overflow: hidden;
+  border-radius: 1rem;
 }
 
 .treatment-story img {
@@ -1009,14 +1010,6 @@ h3 {
   height: 100%;
   min-height: 15rem;
   object-fit: cover;
-  -webkit-mask-image:
-    linear-gradient(to bottom, transparent 0%, black 9%, black 91%, transparent 100%),
-    linear-gradient(to right, transparent 0%, black 7%, black 93%, transparent 100%);
-  -webkit-mask-composite: source-in;
-  mask-image:
-    linear-gradient(to bottom, transparent 0%, black 9%, black 91%, transparent 100%),
-    linear-gradient(to right, transparent 0%, black 7%, black 93%, transparent 100%);
-  mask-composite: intersect;
 }
 
 .treatment-story > div {
