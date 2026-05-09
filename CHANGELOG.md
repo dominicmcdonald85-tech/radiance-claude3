@@ -1,3 +1,73 @@
+# Radiance Aesthetics — Compliance & Polish
+
+## Files changed
+- `index.html` — favicon link, mobile action bar Message link, cookie banner markup, footer social icons, footer legal links repointed to local pages
+- `styles.css` — treatment image 4-edge mask, footer social row, legal-page layout, cookie banner styles
+- `script.js` — back-to-top fix for `#top`, cookie consent persistence
+- `assets/favicon.svg` — new file
+- `privacy-policy.html` — new file
+- `terms-and-conditions.html` — new file
+- `cookie-policy.html` — new file
+
+## 1. Treatment image — four-sided fade
+- Replaced `.treatment-story figure::after` one-sided overlay (which only feathered the inner edge) with a `mask-image` applied directly to the `<img>`
+- Two intersected linear gradients — top-to-bottom and left-to-right — using `mask-composite: intersect` (and `-webkit-mask-composite: source-in` for older WebKit)
+- Feather: 9% top/bottom, 7% left/right (sides read stronger at the same percentage so they're slightly tighter)
+- `.treatment-story figure` now `overflow: visible` since the mask handles the edges
+- Mobile-specific overlay rule removed — the new mask scales correctly without a breakpoint override
+- Result: the editorial photos now blend into the cream background on all four sides instead of reading as pasted-on rectangles
+
+## 2. Footer social icons
+- Instagram + Facebook circular buttons (~2.4rem) in `.footer-brand`, just under the description paragraph
+- URLs:
+  - Instagram → https://www.instagram.com/radiance_aestheticsandwellness/
+  - Facebook → https://www.facebook.com/april.waterman.9
+- Cream-on-dark border, transparent fill, hover lifts opacity + adds a subtle background and translateY(-1px)
+- On mobile, where `.footer-brand p` is hidden, the social row stays visible and centres under the brand wordmark
+
+## 3. Back-to-top fix
+- The site's `scroll-padding-top: 5rem` was offsetting `scrollIntoView(#top)`, leaving the back-to-top link parked just below the header
+- `script.js` now special-cases `href="#top"` to call `window.scrollTo({ top: 0, behavior: "smooth" })`, bypassing scroll-padding entirely
+- All other anchor links unchanged
+
+## 4. Legal pages — three new files
+- `privacy-policy.html`, `terms-and-conditions.html`, `cookie-policy.html` at repo root
+- Shared chrome: brand wordmark + "Back to site" ghost button in the header, slim copyright + nav footer at the bottom
+- `.legal-page` container styled with the site's editorial typography — Cormorant Garamond for headings, Jost for body — single 48rem reading column
+- Cookie banner included on every page, so the consent prompt fires on first visit regardless of entry point
+- Favicon link uses the new `assets/favicon.svg` on all three
+- `script.js` is included on all three so back-to-top, cookie consent, etc. all work
+- Content covers UK aesthetics-clinic-specific boilerplate for a sole practitioner (April Waterman):
+  - **Privacy:** UK GDPR Article 6 + Article 9 lawful bases, ~8 year clinical record retention, data subject rights, ICO complaints route
+  - **Terms:** 18+ suitability, 24-hour cancellation notice, payment, results variation, photography consent, indemnity, England & Wales jurisdiction
+  - **Cookie:** explicitly states no analytics, no advertising, no tracking pixels — only the consent localStorage key + Google Fonts third-party load
+- Footer legal links in `index.html` updated from `https://radianceaesthetics.co/...` to local relative paths (`privacy-policy.html`, etc.)
+- The boilerplate is sensible defaults — review and adjust to your specific practice (e.g. confirm record retention period with your insurer, confirm regulatory body wording) before going live
+
+## 5. Cookie consent banner (UK GDPR / PECR compliant)
+- Floating pill at the bottom of the viewport with backdrop blur, cream background, soft shadow
+- **Reject** and **Accept** buttons are visually equal: same size, same min-width, same letter-spacing. Reject is clay-outlined, Accept is clay-filled — both equally findable, equally clickable
+- Banner copy reflects the no-tracking reality: "This site stores a single cookie to remember your choice here. No analytics, no advertising, no tracking pixels."
+- Cookie Policy link points at the new local `cookie-policy.html`
+- Choice persisted via `localStorage` under key `radiance_cookie_consent` as `{ choice: "accepted"|"rejected", timestamp: ISO8601 }`
+- Banner appears on first visit only across all four pages; dismissed banner stays dismissed across reloads
+- On mobile (≤640px), banner sits 4.6rem from the bottom so it clears the mobile action bar
+- On tablets and below (≤720px), buttons stack into a row that spans the banner width
+- Graceful degradation: if `localStorage` is unavailable (private browsing, etc.), banner still hides on click for that session
+
+## 6. Favicon — clean serif R
+- New `assets/favicon.svg`: rounded-square cream background (#fffdfa) with a centred serif "R" in clay (#a76658)
+- Uses Georgia / Times serif stack for crisp rendering at 16px / 32px tab sizes
+- All four HTML pages (`index.html`, `privacy-policy.html`, `terms-and-conditions.html`, `cookie-policy.html`) link to the new file
+- The old `assets/logos/radiance-icon-only.svg` is left in place (still used elsewhere in the project)
+
+## 7. Mobile action bar — Message opens blank WhatsApp
+- The middle "Message" button now goes to `https://wa.me/447872028436` with no prefilled text — for clients who want to start a fresh conversation rather than land in the booking flow
+- The right "Book" button still uses the booking prefill (unchanged)
+- The "Call" button is unchanged
+
+---
+
 # Radiance Aesthetics — Visual Refresh
 
 Changes made in this pass, ordered by impact.
