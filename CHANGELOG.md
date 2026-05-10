@@ -9,13 +9,12 @@
 - `terms-and-conditions.html` — new file
 - `cookie-policy.html` — new file
 
-## 1. Treatment image — four-sided fade
-- Replaced `.treatment-story figure::after` one-sided overlay (which only feathered the inner edge) with a `mask-image` applied directly to the `<img>`
-- Two intersected linear gradients — top-to-bottom and left-to-right — using `mask-composite: intersect` (and `-webkit-mask-composite: source-in` for older WebKit)
-- Feather: 9% top/bottom, 7% left/right (sides read stronger at the same percentage so they're slightly tighter)
-- `.treatment-story figure` now `overflow: visible` since the mask handles the edges
-- Mobile-specific overlay rule removed — the new mask scales correctly without a breakpoint override
-- Result: the editorial photos now blend into the cream background on all four sides instead of reading as pasted-on rectangles
+## 1. Treatment image — rounded corners
+- Replaced `.treatment-story figure::after` one-sided overlay (which only feathered the inner edge) with a clean `border-radius: 1rem` on the figure
+- Tried a 4-sided `mask-image` fade first but it read as muddy/out-of-focus, especially on close-up skin photography — rounded corners give crisper, more editorial results
+- `.treatment-story figure` keeps `overflow: hidden` so the image is clipped to the radius
+- Mobile-specific overlay rule removed; rounded corners scale correctly without a breakpoint override
+- Result: photos now read as proper editorial frames rather than pasted-on rectangles or blurry vignettes
 
 ## 2. Footer social icons
 - Instagram + Facebook circular buttons (~2.4rem) in `.footer-brand`, just under the description paragraph
