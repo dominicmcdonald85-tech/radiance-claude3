@@ -2113,13 +2113,9 @@ cite {
   }
 
   .footer-main {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 1.25rem;
     padding-bottom: 1.55rem;
-  }
-
-  .footer-brand {
-    grid-column: 1 / -1;
   }
 
   .footer-brand h2 {
@@ -2128,7 +2124,8 @@ cite {
   }
 
   .footer-brand p,
-  .footer-explore {
+  .footer-explore,
+  .footer-contact {
     display: none;
   }
 
@@ -2147,6 +2144,17 @@ cite {
     margin: 0 0 0.2rem;
     font-size: 0.62rem;
     letter-spacing: 0.22em;
+  }
+
+  .footer-column[aria-label="Footer legal links"] {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.15rem 1.1rem;
+  }
+
+  .footer-column[aria-label="Footer legal links"] h3 {
+    display: none;
   }
 
   .footer-column a {
