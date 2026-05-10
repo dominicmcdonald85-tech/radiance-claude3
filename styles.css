@@ -1495,24 +1495,23 @@ cite {
   color: #fffaf5;
 }
 
-.footer-main {
-  display: grid;
-  grid-template-columns: minmax(18rem, 1.6fr) repeat(3, minmax(9rem, 0.7fr));
-  gap: clamp(2rem, 5vw, 5rem);
-  padding-bottom: clamp(3rem, 6vw, 4.5rem);
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: clamp(2rem, 4vw, 3rem);
 }
 
 .footer-brand-logo {
   display: block;
-  width: clamp(10rem, 18vw, 14rem);
+  width: clamp(9rem, 14vw, 11rem);
   height: auto;
-  margin-bottom: 0.5rem;
 }
 
 .footer-social {
   display: flex;
   gap: 1rem;
-  margin: 1rem 0 0;
+  margin: 0.85rem 0 0;
   padding: 0;
   list-style: none;
 }
@@ -1534,6 +1533,13 @@ cite {
 .footer-social svg {
   width: 1.15rem;
   height: 1.15rem;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: clamp(2.5rem, 6vw, 5rem);
+  padding-bottom: clamp(2.5rem, 5vw, 3.5rem);
 }
 
 .footer-column {
@@ -2101,15 +2107,15 @@ cite {
     text-align: center;
   }
 
-  .footer-main {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-    padding-bottom: 1.55rem;
+  .footer-nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding-bottom: 1.2rem;
   }
 
   .footer-brand-logo {
     width: 9rem;
-    margin: 0 auto 0.2rem;
   }
 
   .footer-explore,
@@ -2117,21 +2123,10 @@ cite {
     display: none;
   }
 
-  .footer-social {
-    justify-content: center;
-    margin-top: 0.85rem;
-  }
-
   .footer-column {
     justify-items: center;
     gap: 0.35rem;
     text-align: center;
-  }
-
-  .footer-column h3 {
-    margin: 0 0 0.2rem;
-    font-size: 0.62rem;
-    letter-spacing: 0.22em;
   }
 
   .footer-column[aria-label="Footer legal links"] {
