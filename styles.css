@@ -189,6 +189,10 @@ svg {
   justify-self: end;
 }
 
+.header-cta .cta-short {
+  display: none;
+}
+
 .menu-toggle {
   display: block;
   width: 3rem;
@@ -1842,15 +1846,29 @@ cite {
   }
 
   .header-cta {
-    min-height: 2.75rem;
-    padding: 0.62rem 0.85rem;
-    font-size: 0.66rem;
+    min-height: 2.4rem;
+    padding: 0.5rem 0.85rem;
+    font-size: 0.64rem;
     letter-spacing: 0.1em;
   }
 
+  .header-cta .cta-full {
+    display: none;
+  }
+
+  .header-cta .cta-short {
+    display: inline;
+  }
+
   .menu-toggle {
-    width: 2.75rem;
-    padding-inline: 0.4rem;
+    width: 2.2rem;
+    height: 2.2rem;
+    padding: 0.5rem;
+  }
+
+  .menu-toggle span {
+    height: 1.5px;
+    margin: 0.3rem 0;
   }
 
   .hero-copy {
