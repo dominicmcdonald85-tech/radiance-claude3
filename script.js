@@ -1,5 +1,13 @@
 const toggle = document.querySelector(".menu-toggle");
 const menu = document.querySelector("#mobile-menu");
+const closeBtn = document.querySelector(".menu-close");
+
+const closeMenu = () => {
+  if (!toggle || !menu) return;
+  toggle.setAttribute("aria-expanded", "false");
+  menu.hidden = true;
+  document.body.classList.remove("menu-open");
+};
 
 if (toggle && menu) {
   toggle.addEventListener("click", () => {
@@ -10,12 +18,14 @@ if (toggle && menu) {
   });
 
   menu.addEventListener("click", (event) => {
-    if (event.target instanceof HTMLAnchorElement) {
-      toggle.setAttribute("aria-expanded", "false");
-      menu.hidden = true;
-      document.body.classList.remove("menu-open");
+    if (event.target.closest("a")) {
+      closeMenu();
     }
   });
+}
+
+if (closeBtn) {
+  closeBtn.addEventListener("click", closeMenu);
 }
 
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
