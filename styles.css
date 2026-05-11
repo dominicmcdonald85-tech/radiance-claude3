@@ -1581,9 +1581,9 @@ cite {
   align-items: center;
   gap: 0.5rem;
   padding: 0.55rem 1.1rem;
-  border: 1px solid rgba(167, 102, 88, 0.6);
+  border: 1px solid rgba(196, 149, 106, 0.5);
   border-radius: 0.3rem;
-  color: var(--clay);
+  color: #c4956a;
   text-decoration: none;
   font-family: var(--sans);
   font-size: 0.82rem;
@@ -1593,8 +1593,8 @@ cite {
 }
 
 .footer-book-btn:hover {
-  background: rgba(167, 102, 88, 0.12);
-  border-color: var(--clay);
+  background: rgba(196, 149, 106, 0.1);
+  border-color: #c4956a;
   color: #fffaf5;
 }
 
@@ -2210,12 +2210,13 @@ cite {
     gap: 0.75rem;
   }
 
+  .footer-contact-item,
   .footer-pipe {
     display: none;
   }
 
   .footer-book-btn {
-    margin-top: 0.2rem;
+    margin-top: 0;
   }
 
   .footer-legal-row {
